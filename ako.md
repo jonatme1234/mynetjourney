@@ -1,8 +1,8 @@
 ## Cisco Journey
 
 
-###The command below will use python to confiure a cisco access point:
-
+### The command below will use python to confiure a cisco access point:
+~~~
 import json
 import netmiko
 from netmiko import ConnectHandler
@@ -56,8 +56,27 @@ print(output)
 accessAutoAP.disconnect()
 
 
+## THIS JSON FILE WILL BE USE:
 
-# create a show run output file
-with open('show_run_output.txt', 'w') as file:
-    file.write(output)
-###
+{
+    "aironetInfo": {
+        "device_type": "cisco_ios_telnet",
+        "host": "10.42.10.3",
+        "username": "admin",
+        "password": "pass",
+        "secret": "pass"
+    },
+
+    "aironetConfig": {
+        "hostname": "airowifi",
+        "ssid": "NetDevOPsWIFI-42Jonathan",
+        "authentication": "open",
+        "key-man": "wpa",
+        "wifi-pass": "C1sc0123",
+        "channel": "8",
+        "encr-mod": "tkip",
+        "vlan": "42"
+    }
+}
+
+~~~
